@@ -17,9 +17,15 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.11.0'
+
+      - name: Debugging Information
+        run: |
+          pwd  # Print current directory
+          ls   # List files in the current directory
+
       - name: Install dependencies
         run: |
-            python -m pip install --upgrade pip==21.3.1  # Pin pip version
-            pip install -r requirements.txt
+          python -m pip install --upgrade pip==21.3.1  # Pin pip version
+          pip install -r requirements.txt
   
 
