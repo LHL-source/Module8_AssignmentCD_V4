@@ -24,9 +24,10 @@ jobs:
           ls   # List files in the current directory
 
       - name: Install dependencies
-        run: |
+        run: 
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
+          pip install -U Flask==2.0.2 Werkzeug==3.0.3
 
       - name: Run tests
         run: pytest
