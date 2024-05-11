@@ -1,4 +1,5 @@
 import lib
+import json  # Import the json module
 
 def test_power():
     with lib.app.test_request_context():
