@@ -45,7 +45,7 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          port: 22
+          
           script: |
             # Commands to run on the droplet after SSH connection
             git pull origin main
