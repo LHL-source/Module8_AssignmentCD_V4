@@ -45,6 +45,14 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
+          port: 22
+          script: |
+            # Commands to run on the droplet after SSH connection
+            git pull origin main
+            pip install gunicorn  # Install Gunicorn if needed
+            pkill gunicorn  # Stop existing Gunicorn instances (optional)
+            gunicorn -w 4 -b 0.0.0.0:8080 app_module:app_variable &  # Start Gunicorn
+            sleep 3
 
        
           
