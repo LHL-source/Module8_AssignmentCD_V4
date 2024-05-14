@@ -18,8 +18,8 @@ jobs:
           pwd
           ls -l  
 
-      - name: Change to repository directory
-        run: cd Assign_CD  # Assuming this is the root directory of your application code
+      #- name: Change to repository directory
+        #run: cd Assign_CD  # Assuming this is the root directory of your application code
       
       - name: Setup Python 3.11.0
         uses: actions/setup-python@v3
@@ -53,13 +53,18 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          
-          script: |
-            # Commands to run on the droplet after SSH connection
-            pip install gunicorn  # Install Gunicorn if needed
-            pkill gunicorn  # Stop existing Gunicorn instances (optional)
-            gunicorn -w 4 -b 0.0.0.0:8080 app_module:app_variable &  # Start Gunicorn
-            sleep 3
+         
+      - name: Debugging Information
+        run: |
+            pwd  # Print current directory
+            ls   # List files in the current directory
+
+            script: |
+              # Commands to run on the droplet after SSH connection
+              pip install gunicorn  # Install Gunicorn if needed
+              pkill gunicorn  # Stop existing Gunicorn instances (optional)
+              gunicorn -w 4 -b 0.0.0.0:8080 app_module:app_variable &  # Start Gunicorn
+              sleep 3
           
 
           
