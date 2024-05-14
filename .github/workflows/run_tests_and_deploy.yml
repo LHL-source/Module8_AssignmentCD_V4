@@ -63,7 +63,7 @@ jobs:
               # Commands to run on the droplet after SSH connection
               pip install gunicorn  # Install Gunicorn if needed
               pkill gunicorn  # Stop existing Gunicorn instances (optional)
-              gunicorn -w 4 -b 0.0.0.0:8080 app_module:app_variable &  # Start Gunicorn
+              gunicorn -w 4 -b 0.0.0.0:8080 lib:app &  # Start Gunicorn
               sleep 3
           
 
