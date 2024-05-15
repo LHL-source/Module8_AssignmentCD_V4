@@ -52,6 +52,9 @@ jobs:
           script: |
             pwd  # Print current directory
             ls   # List files in the current directory
+            cd /home/farm
+            pwd
+            ls
             
 
       
