@@ -42,6 +42,11 @@ jobs:
       
       
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
       - name: SSH login on droplet and update CD app 
         uses: appleboy/ssh-action@master
         with:
@@ -58,11 +63,3 @@ jobs:
             git pull https://github.com/LHL-source/Module8_AssignmentCD_V4.git
             systemctl restart farm
             systemctl status farm
-
-            
-
-      
-          
-
-          
-  
