@@ -8,7 +8,7 @@ def power(x, y):
     print("today is 10-5-2024 V3")
     return jsonify(result=result)  # Return a JSON response with the result
 
-@app.route('/health')
+@app.route('/health_V1')
 def health_check():
     # Check if application components are healthy
     # Return a JSON response indicating health status
