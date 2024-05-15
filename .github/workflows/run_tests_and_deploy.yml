@@ -55,6 +55,7 @@ jobs:
             cd /home/farm
             pwd
             ls
+            git pull https://github.com/LHL-source/Module8_AssignmentCD_V4.git
             
 
       
